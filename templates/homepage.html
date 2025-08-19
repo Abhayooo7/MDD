@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>HealthCure | AI Disease Detection</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      margin-top: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-section h1 {
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    .card-custom {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-detect {
+      margin-top: 15px;
+      background: linear-gradient(90deg, #00ffcc, #0099ff);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .btn-detect:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #0099ff, #00ffcc);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 15px;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-info" href="/">🧬 MDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/covid">Covid</a></li>
+          <li class="nav-item"><a class="nav-link" href="/braintumor">Brain Tumor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/alzheimer">Alzheimer</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pneumonia">Pneumonia</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>Welcome to MDD - Multiple Disease Detector</h1>
+      <p class="lead">AI-powered disease detection platform. Upload your medical scans and let AI assist in early diagnosis.</p>
+    </div>
+
+    <!-- Detection Cards -->
+    <div class="row mt-5 g-4">
+      <div class="col-md-3">
+        <div class="card-custom">
+          <h4>🦠 Covid Detection</h4>
+          <p>Upload chest X-ray to detect COVID-19 infection.</p>
+          <a href="/covid" class="btn btn-detect">Detect Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-custom">
+          <h4>🧠 Brain Tumor</h4>
+          <p>Upload MRI scans to detect brain tumor presence.</p>
+          <a href="/braintumor" class="btn btn-detect">Detect Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-custom">
+          <h4>🧬 Alzheimer</h4>
+          <p>Upload MRI scans to check for Alzheimer indicators.</p>
+          <a href="/alzheimer" class="btn btn-detect">Detect Now</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-custom">
+          <h4>🌫️ Pneumonia</h4>
+          <p>Upload chest X-ray to identify Pneumonia.</p>
+          <a href="/pneumonia" class="btn btn-detect">Detect Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

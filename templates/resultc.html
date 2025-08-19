@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Covid Detection Results</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background: #0d1b2a !important;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #00e0ff !important;
+    }
+
+    .card-result {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
+      margin-top: 40px;
+    }
+
+    .card-result h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #00e0ff;
+    }
+
+    .patient-info p {
+      font-size: 1rem;
+      margin: 6px 0;
+    }
+
+    .result-badge {
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .negative {
+      background: #198754;
+      color: #fff;
+    }
+
+    .positive {
+      background: #dc3545;
+      color: #fff;
+    }
+
+    .uploaded-img {
+      border-radius: 12px;
+      border: 3px solid #00e0ff;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-info" href="/">🧬 MDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active text-danger" href="/covid">Covid</a></li>
+          <li class="nav-item"><a class="nav-link" href="/braintumor">Brain Tumor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/alzheimer">Alzheimer</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pneumonia">Pneumonia</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Result Card -->
+  <div class="container">
+    <div class="card-result">
+      <h1>Covid-19 Test Results</h1>
+      <div class="row align-items-center">
+        <!-- Uploaded Image -->
+        <div class="col-md-4 text-center">
+          <img src="static/uploads/{{filename}}" class="img-fluid uploaded-img" style="max-height:250px;">
+        </div>
+        <!-- Patient Info + Result -->
+        <div class="col-md-8">
+          <div class="patient-info">
+            <p><strong>First Name:</strong> {{fn}}</p>
+            <p><strong>Last Name:</strong> {{ln}}</p>
+            <p><strong>Age:</strong> {{age}}</p>
+            <p><strong>Gender:</strong> {{gender}}</p>
+          </div>
+
+          {% if r==1 %}
+          <div class="result-badge negative">✅ COVID NEGATIVE</div>
+          {% else %}
+          <div class="result-badge positive">⚠️ COVID POSITIVE</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
